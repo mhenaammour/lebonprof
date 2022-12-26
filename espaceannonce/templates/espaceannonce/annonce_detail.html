@@ -1,0 +1,24 @@
+{%extends 'core/base.html'%}
+
+{%block title%} {{annonce.slug}} {%endblock%}
+{%block content %}
+{%if annonce.image%}
+    <div class="image mb-4">
+        <img src="{{annonce.image.url}}" alt="image of {{annonce.title}}">
+    </div>
+    {%endif%}
+    <h1 class="text-2xl">{{annonce.title}}</h1>
+    <h1 class="text-xm text-gray-600"><a href="{%url 'annonceur_detail' annonce.user.id %}"> <b>username :</b>{{annonce.user.username}}</a></h1>
+    {%if request.user.last_name and request.user.first_name%}
+        <h1 class="text-xm text-gray-600"><a href="{%url 'annonceur_detail' annonce.user.id %}"><b>Fullname :</b>{{annonce.user.first_name}} {{annonce.user.last_name}}</a></h1>
+    {%endif%}
+    <h1 class="text-xs text-gray-500">Adresse : {{annonce.addresse}}</h1>
+
+    <h1 class="text-xs text-gray-500">{{annonce.tarif}} dzd</h1>
+    {%if annonce.description%}
+        <p class="mt-4">{{annonce.description}}</p>
+    {% endif %}
+
+    <a href="{%url 'add_to_fav' annonce.id%}" class ="inline-block px-8 py-4 bg-gray-500 text-white">A Consulter Plus tard</a>
+
+{%endblock%}

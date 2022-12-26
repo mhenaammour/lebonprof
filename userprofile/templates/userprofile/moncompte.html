@@ -1,0 +1,9 @@
+{%extends 'core/base.html'%}
+
+{% block title %}Mon Compte{% endblock  %}
+<h1>Signup</h1>
+
+{% block content %}
+    <div class="inline-block mt-7 py-4 px-7 bg-gray-300 text-white"><p >You are logged as : {{request.user.username}} </p></div></br>
+    <a href="{%url 'logout'%}" class="inline-block mt-7 py-4 px-7 bg-gray-400 text-white">logout</a>
+{% endblock  %}

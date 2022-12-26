@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> {%block title%}{% endblock  %} | lebonprof</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <nav class="max-w-8xl mx-auto py-4 px-6 flex items-center justify-between bg-teal-400">
+            <div class="logo">
+                <a href="/"class ="text-2xl text-white">Lebonprof</a>
+            </div>
+            <div class="logo">
+                <a href="{%url 'apropos'%}"class ="text-white">Apropos</a>
+            </div>
+            <div class="logo">
+                {%if request.user.is_authenticated %}
+
+                    <a href="{%url 'moncompte'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">MonCompte</a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if request.user.is_authenticated %}
+
+                    <a href="{%url 'mesannonces'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">Mesannonces</a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if not request.user.is_authenticated %}
+
+                    <a href="{%url 'login'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">Login</a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if not request.user.is_authenticated %}
+
+                    <a href="{%url 'signup'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">Signup</a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if  request.user.is_authenticated %}
+
+                    <a href="{%url 'logout'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">Logout</a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if request.user.is_authenticated %}
+                            <a href="{%url 'fav_view'%}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                </svg>
+                            </a>
+                {%endif%}
+            </div>
+            
+              
+            <div class="search" >
+                <form  action="{% url 'search' %}" method='get' class="flex items-center space-x-4" >
+                    <input  type="text"name='q' placeholder="Search Cours" class="py-2 px-4 rounded-xl" >
+                    <button   type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          
+                    </button>
+                </form>
+            </div>
+            
+            
+        </nav>
+        <div class="max-w-4xl mx-auto py-4 px-6">
+        {% block content %}
+
+        {% endblock  %}
+        </div>
+
+        
+    </body>
+</html>

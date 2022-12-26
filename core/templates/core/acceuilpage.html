@@ -1,0 +1,32 @@
+ {% extends 'core/base.html' %}
+ {%block title%}Welcome{% endblock  %}|
+
+ {% block content  %}
+ {%if messages%}
+ {%for message in messages%}
+     <div class='py-4 px-8 bg-gray-200 text-gray-800'>
+         {{message}}
+     </div>
+ {%endfor%}
+{%endif%}
+    <div class="flex flex-wrap">
+        
+        {%for annonce in annonces%}  
+
+            <div class="annonce w-1/3 p-2">
+                <div class="p-5 bg-gray-200">
+                    <a href="{%url 'annonce_detail' annonce.slug%}">
+                        <div class="image mb-3">
+                            <img src="{{annonce.get_thumbnail}}" alt="image of {{annonce.title}}">
+                        </div>
+                        <h2 claas="text-xl" >{{annonce.title}}</h2>
+                        <p class="text-sx text-gray-800">Publié par :{{annonce.user.username}}</p>
+                        <p class="text-sm text-gray-600">Tarif :{{annonce.tarif}} DZD</p>
+                        <p class="text-sm text-gray-600">Date publication :{{annonce.date_pub}} </p>
+                    </a>  
+                </div>
+            </div>
+
+        {%endfor%}  
+    </div>        
+{% endblock  %}
