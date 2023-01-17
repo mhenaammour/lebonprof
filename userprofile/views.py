@@ -10,8 +10,37 @@ from django.utils.text import slugify
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import requests
+from bs4 import BeautifulSoup
 
 
+@login_required
+def scrape_view(request):
+    # Send an HTTP request to the website and retrieve the HTML content
+    URL = 'https://www.superprof.ch/s/toute-matiere,Suisse,,.html'
+
+    response = requests.get( URL)
+    html_content = response.content
+
+    # Parse the HTML content using Beautiful Soup
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Extract the data from the HTML using Beautiful Soup
+    titles = soup.find_all('h2', class_='titre')
+    prices = soup.find_all('span', class_='label')
+    adresses = soup.find_all('p', class_='adresse')
+
+    # Store the data in a list of dictionaries
+    data = []
+    for i in range(len(titles)):
+        data.append({
+            'title': titles[i].text,
+            'price': prices[i].text,
+            'adresse': adresses[i].text,
+        })
+
+    # Render the data in a template
+    return render(request, 'userprofile/scrape.html', {'data': data})
 
 @login_required
 def mesannonces(request):

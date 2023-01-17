@@ -14,9 +14,9 @@
         {%for annonce in annonces%}  
 
             <div class="annonce w-1/3 p-2">
-                <div class="p-5 bg-gray-200">
+                <div class="p-4 bg-gray-200">
                     <a href="{%url 'annonce_detail' annonce.slug%}">
-                        <div class="image mb-3">
+                        <div class="article-image">
                             <img src="{{annonce.get_thumbnail}}" alt="image of {{annonce.title}}">
                         </div>
                         <h2 claas="text-xl" >{{annonce.title}}</h2>

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Annonce
+from .models import Annonce,Offer
 
 class AnnonceForm(forms.ModelForm):
     class Meta:
@@ -53,4 +53,25 @@ class AnnonceForm(forms.ModelForm):
 
 
 
+        }
+
+
+
+
+
+
+class OfferForm(forms.ModelForm):
+    class Meta:
+        model=Offer
+        fields=('price','details',)
+        widgets ={
+            'price': forms.NumberInput(attrs={
+                'class':'w-full p-4 border border-gray-200'
+
+            }),
+            'details': forms.Textarea(attrs={
+                'class':'w-full p-4 border border-gray-200'
+
+            }),
+            
         }

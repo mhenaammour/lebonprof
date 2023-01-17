@@ -15,5 +15,6 @@ urlpatterns = [
     path('mesannonces/delete_annonce/<slug:slug>/',views.delete_annonce,name='delete_annonce'),
 
     path('annonceur/<int:pk>/', views.annonceur_detail,name='annonceur_detail'),
+    path('scrappedannonces/',views.scrape_view, name='scrapper'),
 
 ]

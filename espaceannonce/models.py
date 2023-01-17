@@ -46,7 +46,7 @@ class Wilaya(models.Model):
         return self.title
 
 class Commune(models.Model):
-    wilaya=models.ForeignKey(Wilaya, related_name='Communes',on_delete=models.CASCADE)
+    wilaya=models.ForeignKey(Wilaya, related_name='Communes',on_delete=models.CASCADE,default=1)
     title=models.CharField(max_length=50)
     slug=models.SlugField(max_length=50)
 
@@ -105,3 +105,9 @@ class Annonce(models.Model):
     
 
     
+class Offer(models.Model):
+    vendor = models.ForeignKey( User , on_delete=models.CASCADE)
+    annonc = models.ForeignKey(Annonce ,related_name='offers', on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    date = models.DateTimeField(auto_now_add=True)
+    details= models.TextField(blank=True)

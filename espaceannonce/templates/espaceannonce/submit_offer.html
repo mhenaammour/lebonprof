@@ -1,0 +1,12 @@
+{%extends 'core/base.html'%}
+{%block title%}Faire une offre{%endblock%}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="py-4 px-8 bg-gray-400 text-white hover:bg-gray-800 ">Submit offer</button>
+    </form>
+{% endblock %}
+
+
+

@@ -2,13 +2,13 @@
 
 {%block title%} {{annonce.slug}} {%endblock%}
 {%block content %}
-{%if annonce.image%}
-    <div class="image mb-4">
-        <img src="{{annonce.image.url}}" alt="image of {{annonce.title}}">
-    </div>
-    {%endif%}
-    <h1 class="text-2xl">{{annonce.title}}</h1>
-    <h1 class="text-xm text-gray-600"><a href="{%url 'annonceur_detail' annonce.user.id %}"> <b>username :</b>{{annonce.user.username}}</a></h1>
+
+{%if annonce.thumbnail%}
+
+    <img src="{{annonce.thumbnail.url}}" alt="image of {{annonce.title}}" class="article-image">
+{%endif%}
+    <h1 class="article-title">{{annonce.title}}</h1>
+    <h1 class="article-author"><a href="{%url 'annonceur_detail' annonce.user.id %}"> <b>username :</b>{{annonce.user.username}}</a></h1>
     {%if request.user.last_name and request.user.first_name%}
         <h1 class="text-xm text-gray-600"><a href="{%url 'annonceur_detail' annonce.user.id %}"><b>Fullname :</b>{{annonce.user.first_name}} {{annonce.user.last_name}}</a></h1>
     {%endif%}
@@ -16,9 +16,70 @@
 
     <h1 class="text-xs text-gray-500">{{annonce.tarif}} dzd</h1>
     {%if annonce.description%}
-        <p class="mt-4">{{annonce.description}}</p>
+    <div class="article-content">{{ annonce.description|safe }}</div>
     {% endif %}
+    <div class="actions">
+        <a href="{%url 'add_to_fav' annonce.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">A Consulter Plus tard</a>
+        <a href="{%url 'submit_offer' annonce.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">Faire une Offre</a>
 
-    <a href="{%url 'add_to_fav' annonce.id%}" class ="inline-block px-8 py-4 bg-gray-500 text-white">A Consulter Plus tard</a>
+    </div>
+    
+
+    <style>
+        h1.offer-list-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        </style>
+        <br>
+        <h1 class="offer-list-title">Liste des offres :</h1>
+<div class="offer-list">
+
+    {% for offer in annonce.offers.all %}
+        <div class="offer">
+        <p>Utilisateur : <a href="{%url 'annonceur_detail' offer.vendor.id %}">{{ offer.vendor}}</a></p>
+        <p>Prix : {{ offer.price }}</p>
+            <p>Description de l'article : {{ offer.details }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+{% load leaflet_tags %}
+{% leaflet_css %}
+{% leaflet_js %}
+
+<script>
+  // Initialize the map
+  var map = L.map('map').setView([48.8534, 2.3488], 13);
+
+  // Add a tile layer to the map
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+      maxZoom: 18
+  }).addTo(map);
+
+  // Get the address of the advertisement
+  var address = "{{ annonce.addresse }}";
+
+  // Geocode the address to get its latitude and longitude
+  var geocoder = new L.Control.Geocoder.Nominatim();
+  geocoder.geocode(address, function(results) {
+    if (results.length > 0) {
+      // Set the center of the map to the latitude and longitude of the address
+      map.setView(results[0].center, 13);
+
+      // Add a marker at the address
+      var marker = L.marker(results[0].center).addTo(map);
+
+      // Add a popup to the marker with the address
+      marker.bindPopup(address).openPopup();
+    } else {
+      // If the address could not be geocoded, show an error message
+      alert('Geocode was not successful for the following address: ' + address);
+    }
+  });
+</script>
+
 
 {%endblock%}

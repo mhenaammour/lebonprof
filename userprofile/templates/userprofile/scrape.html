@@ -1,0 +1,28 @@
+{%extends 'core/base.html'%}
+
+{% block title %}Data Scrapped{% endblock  %}
+<h1>Data Scrapped</h1>
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Adresse</th>
+            <th>Owner</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.adresse }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock  %}
