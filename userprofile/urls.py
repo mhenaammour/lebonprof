@@ -16,5 +16,11 @@ urlpatterns = [
 
     path('annonceur/<int:pk>/', views.annonceur_detail,name='annonceur_detail'),
     path('scrappedannonces/',views.scrape_view, name='scrapper'),
+    path('scraper/', views.scrape_data, name='scrappe'),
+    path('download/', views.download_scraped_data, name='download'),
+    path('Mesmessages/',views.mesmessages , name='mesmessages'),
+    path('buyer/<int:pk>/', views.buyer_detail,name='buyer_detail'),
+
+
 
 ]

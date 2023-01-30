@@ -2,6 +2,7 @@ from django.conf import settings
 from .models import Annonce 
 
 class Cart(object):
+#cette fonction sert a enregistrer les annonces favories d'un utilisateur #
     def __init__(self, request):
         self.session= request.session
         cart = self.session.get(settings.CART_SESSION_ID)

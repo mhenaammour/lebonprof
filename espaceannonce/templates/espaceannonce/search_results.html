@@ -1,0 +1,35 @@
+{%extends 'core/base.html'%}
+
+{%block title%} Search{%endblock%}
+{%block content %}
+    {%if annonces%}
+        <h1 class='text-2xl'>Search</h1>
+        <h2 class='text-xs text-gray-600'>Résultas de la recherche {{q}}:</h2>
+        
+
+        <div class="flex flex-wrap">
+            {%for annonce in annonces%}  
+
+                <div class="annonce w-1/3 p-2">
+                    <div class="p-5 bg-gray-200">
+                        <a href="{%url 'annonce_detail' annonce.slug%}">
+                            {%if annonce.image%}
+                                <div class="image mb-3">
+                                    <img src="{{annonce.image.url}}" alt="image of {{annonce.title}}">
+                                </div>
+                            {%endif%}
+                            <h2 claas="text-xl" >{{annonce.title}}</h2>
+                            <p class="text-sm text-gray-600">{{annonce.tarif}} DZD</p>
+                            <p class="text-sm text-gray-600">{{annonce.date_pub}} </p>
+                        </a>  
+                    </div>
+                </div>
+
+            {%endfor%}  
+        </div>        
+    {%else%}
+        <h1 class='text-2xl'>Search</h1>
+        <h2 class='text-xs text-gray-600'> Oups aucun resultat pour votre recherche </h2>
+    {%endif%}
+
+{%endblock%}

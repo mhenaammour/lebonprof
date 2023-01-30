@@ -9,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> {%block title%}{% endblock  %} | lebonprof</title>
+        <title> {%block title%}{% endblock  %} | StudyIN</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/offers.css' %}">
         <link rel="stylesheet" type="text/css" href="https://cdn.tailwindcss.com/">
@@ -19,7 +19,7 @@
     <body>
         <nav class="max-w-8xl mx-auto py-4 px-6 flex items-center justify-between bg-teal-400">
             <div class="logo">
-                <a href="/"class ="text-2xl text-white">Lebonprof</a>
+                <a href="/"class ="text-2xl text-white">StudyIN</a>
             </div>
             <div class="logo">
                 <a href="{%url 'apropos'%}"class ="text-white">Apropos</a>
@@ -33,7 +33,9 @@
             <div class="logo">
                 {%if request.user.is_authenticated %}
 
-                    <a href="{%url 'scrapper'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">WebScrap</a>
+                    <a href="{% url 'download' %}"class ="text-white px-4 py-2 bg-teal-800 rounded">DownloadScrapy</a>
+                    <a href="{% url 'scrappe' %}"class ="text-white px-4 py-2 bg-teal-800 rounded">WebScrap</a>
+
                 {%endif%}
             </div>
             <div class="logo">
@@ -69,8 +71,20 @@
                             </a>
                 {%endif%}
             </div>
-            
-              
+            <div class="logo">
+                {%if request.user.is_authenticated %}
+                            <a href="{%url 'mesmessages'%}">
+                                <svg fill="#000000" height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-242.74 -242.74 943.48 943.48" xml:space="preserve" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke="#000000" stroke-width="0.00458"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M428,41.534H30c-16.569,0-30,13.431-30,30v252c0,16.568,13.432,30,30,30h132.1l43.942,52.243 c5.7,6.777,14.103,10.69,22.959,10.69c8.856,0,17.258-3.912,22.959-10.69l43.942-52.243H428c16.568,0,30-13.432,30-30v-252 C458,54.965,444.568,41.534,428,41.534z M323.916,281.534H82.854c-8.284,0-15-6.716-15-15s6.716-15,15-15h241.062 c8.284,0,15,6.716,15,15S332.2,281.534,323.916,281.534z M67.854,198.755c0-8.284,6.716-15,15-15h185.103c8.284,0,15,6.716,15,15 s-6.716,15-15,15H82.854C74.57,213.755,67.854,207.039,67.854,198.755z M375.146,145.974H82.854c-8.284,0-15-6.716-15-15 s6.716-15,15-15h292.291c8.284,0,15,6.716,15,15C390.146,139.258,383.43,145.974,375.146,145.974z"></path> </g> </g> </g></svg>
+                            </a>
+                {%endif%}
+            </div>
+            <div class="logo">
+                {%if  request.user.is_authenticated %}
+
+                    <a href="{%url 'search_results'%}"class ="text-white px-4 py-2 bg-teal-800 rounded">Filtrer</a>
+                {%endif%}
+            </div>
+             
             <div class="search" >
                 <form  action="{% url 'search' %}" method='get' class="flex items-center space-x-4" >
                     <input  type="text"name='q' placeholder="Search Cours" class="py-2 px-4 rounded-xl" >
@@ -94,7 +108,7 @@
         <footer class="bg-gray-800 p-4 mt-8">
             <div class="max-w-8xl mx-auto flex items-center justify-between">
               <div class="text-white">
-                Copyright &copy; 2023 Lebonprof
+                Copyright &copy; 2023 StudyIN
               </div>
               <div class="flex justify-end">
                 <a href="#" class="text-white px-4 py-2 hover:bg-gray-900 rounded-full">Contact</a>
@@ -103,6 +117,14 @@
               </div>
             </div>
         </footer>
+        <style>
+            .text-white {
+                width: 50%;
+                text-align: center;
+                color: #ffffff;
+                padding: 10px;
+              }
+            </style>              
            
     </body>
 </html>

@@ -1,0 +1,74 @@
+{%extends 'core/base.html'%}
+
+{% block title %}{{user.user.username}}{% endblock  %}
+<h1>Profil</h1>
+
+{% block content %}
+<div class="card-profile">
+  <div class="card-profile-header">
+    <img class="card-profile-picture" src="{{ user.profile_picture.url }}" alt="Photo de profil">
+    <h1 class="card-profile-name">{{ user.first_name }}</h1>
+  </div>
+  <div class="card-profile-body">
+    <div class="card-profile-info">
+      <p><label>Nom d'utilisateur :</label> {{ user.user.username }}</p>
+      <p><label>Adresse e-mail :</label> {{ user.user.email }}</p>
+      <p><label>Numéro de téléphone :</label> {{ user.phone_number }}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+
+/* Styles CSS pour la mise en forme de la carte de profil */
+.card-profile {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+}
+.card-profile-header {
+  display: flex;
+  align-items: center;
+}
+.card-profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.card-profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-profile-body {
+  margin-top: 20px;
+}
+.card-profile-info label {
+  font-weight: bold;
+}
+.card-profile-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+  
+</style>
+<script>
+  // Code JavaScript pour la mise en place de la logique de la carte de profil
+// Exemple : bouton de modification des informations de profil
+document.querySelector('#edit-button').addEventListener('click', function() {
+  // Code pour ouvrir un formulaire de modification des informations de profil
+});
+
+</script>
+
+{% endblock  %}

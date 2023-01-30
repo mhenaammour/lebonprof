@@ -20,7 +20,8 @@
     {% endif %}
     <div class="actions">
         <a href="{%url 'add_to_fav' annonce.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">A Consulter Plus tard</a>
-        <a href="{%url 'submit_offer' annonce.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">Faire une Offre</a>
+        <a href="{%url 'submit_offer' annonce.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">Commeneter</a>
+        <a href="{%url 'submit_message' annonce.id annonce.user.id%}" class ="inline-block px-4 py-2 bg-teal-800 rounded text-white">Faire une offre</a>
 
     </div>
     
@@ -32,13 +33,14 @@
         }
         </style>
         <br>
-        <h1 class="offer-list-title">Liste des offres :</h1>
+        <h1 class="offer-list-title">Vos Avis sur cet article  :</h1>
 <div class="offer-list">
 
     {% for offer in annonce.offers.all %}
         <div class="offer">
         <p>Utilisateur : <a href="{%url 'annonceur_detail' offer.vendor.id %}">{{ offer.vendor}}</a></p>
-        <p>Prix : {{ offer.price }}</p>
+        <h1 class="text-xs text-gray-500">publié : {{offer.date}}</h1>
+
             <p>Description de l'article : {{ offer.details }}</p>
         </div>
     {% endfor %}

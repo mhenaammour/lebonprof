@@ -1,0 +1,74 @@
+{%extends 'core/base.html'%}
+
+{%block title %}Messages{%endblock%}
+
+{%block content%}
+Mes messages
+{%if messages%}
+    {%for message in messages%}
+        <div id="messages-container">
+            <a href="{%url 'buyer_detail' message.buyer.pk %}">
+                <div class="message" onclick="location.href='/message/1'">
+                <img src="data:image/jpeg;base64,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" class="profile-picture">
+                <div class="message-details">
+                    <div class="sender-name">{{message.buyer.username}}</div>
+                    <div class="message-preview">{{message.message}} </div>
+                    <p class="message-date">{{message.created_at}}</p>
+
+                </div>
+                </div>
+            </a>
+    {%endfor%}
+{%else %}
+        Aucun message disponible pour le moment !
+{%endif%}
+    
+      
+   
+    <!-- ajouter autant de div "message" que nécessaire -->
+  </div>
+  
+<style>
+    #messages-container {
+        max-height: 500px;
+        overflow-y: scroll;
+      }
+      .message-date {
+        font-size: 0.8em;
+        color: #999;
+      }
+      .message {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+      }
+      .profile-picture {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .message-details {
+        flex: 1;
+      }
+      .sender-name {
+        font-weight: bold;
+      }
+      
+
+</style>
+<script>
+// En utilisant jQuery
+$('.message-item').click(function() {
+    // Récupérer l'identifiant (ou autres informations) du message
+    var messageId = $(this).data('id');
+    // Rediriger vers la page de détails du message
+    window.location.href = '/message-details/' + messageId + '/';
+  });
+  
+</script>
+
+    
+{%endblock%}

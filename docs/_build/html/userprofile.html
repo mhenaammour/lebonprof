@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>userprofile package &mdash; StudyIN 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="userprofile.migrations package" href="userprofile.migrations.html" />
+    <link rel="prev" title="manage module" href="manage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> StudyIN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">lebonprof</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="espaceannonce.html">espaceannonce package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lebonprof.html">lebonprof package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">userprofile package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html">userprofile.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userprofile.admin">userprofile.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userprofile.apps">userprofile.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userprofile.apps.UserprofileConfig"><code class="docutils literal notranslate"><span class="pre">UserprofileConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#userprofile-forms-module">userprofile.forms module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userprofile.models">userprofile.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userprofile.models.Userprofile"><code class="docutils literal notranslate"><span class="pre">Userprofile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#userprofile-tests-module">userprofile.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#userprofile-urls-module">userprofile.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#userprofile-views-module">userprofile.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-userprofile">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">StudyIN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">lebonprof</a></li>
+      <li class="breadcrumb-item active">userprofile package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/userprofile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="userprofile-package">
+<h1>userprofile package<a class="headerlink" href="#userprofile-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userprofile.migrations.html">userprofile.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations.0001_initial">userprofile.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations.0002_userprofile_first_name_userprofile_last_name_and_more">userprofile.migrations.0002_userprofile_first_name_userprofile_last_name_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0002_userprofile_first_name_userprofile_last_name_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0002_userprofile_first_name_userprofile_last_name_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0002_userprofile_first_name_userprofile_last_name_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations.0003_alter_userprofile_profile_picture">userprofile.migrations.0003_alter_userprofile_profile_picture module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0003_alter_userprofile_profile_picture.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0003_alter_userprofile_profile_picture.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0003_alter_userprofile_profile_picture.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations.0004_alter_userprofile_profile_picture">userprofile.migrations.0004_alter_userprofile_profile_picture module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0004_alter_userprofile_profile_picture.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0004_alter_userprofile_profile_picture.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0004_alter_userprofile_profile_picture.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations.0005_alter_userprofile_profile_picture">userprofile.migrations.0005_alter_userprofile_profile_picture module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0005_alter_userprofile_profile_picture.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0005_alter_userprofile_profile_picture.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="userprofile.migrations.html#userprofile.migrations.0005_alter_userprofile_profile_picture.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userprofile.migrations.html#module-userprofile.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userprofile.admin">
+<span id="userprofile-admin-module"></span><h2>userprofile.admin module<a class="headerlink" href="#module-userprofile.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userprofile.apps">
+<span id="userprofile-apps-module"></span><h2>userprofile.apps module<a class="headerlink" href="#module-userprofile.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="userprofile.apps.UserprofileConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">userprofile.apps.</span></span><span class="sig-name descname"><span class="pre">UserprofileConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userprofile/apps.html#UserprofileConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userprofile.apps.UserprofileConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.apps.UserprofileConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#userprofile.apps.UserprofileConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.apps.UserprofileConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'userprofile'</span></em><a class="headerlink" href="#userprofile.apps.UserprofileConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="userprofile-forms-module">
+<h2>userprofile.forms module<a class="headerlink" href="#userprofile-forms-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userprofile.models">
+<span id="userprofile-models-module"></span><h2>userprofile.models module<a class="headerlink" href="#module-userprofile.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">userprofile.models.</span></span><span class="sig-name descname"><span class="pre">Userprofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_picture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/userprofile/models.html#Userprofile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#userprofile.models.Userprofile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#userprofile.models.Userprofile.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#userprofile.models.Userprofile.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#userprofile.models.Userprofile.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#userprofile.models.Userprofile.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#userprofile.models.Userprofile.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#userprofile.models.Userprofile.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.phone_number">
+<span class="sig-name descname"><span class="pre">phone_number</span></span><a class="headerlink" href="#userprofile.models.Userprofile.phone_number" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.profile_picture">
+<span class="sig-name descname"><span class="pre">profile_picture</span></span><a class="headerlink" href="#userprofile.models.Userprofile.profile_picture" title="Permalink to this definition"></a></dt>
+<dd><p>Just like the FileDescriptor, but for ImageFields. The only difference is
+assigning the width/height to the width_field/height_field, if appropriate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#userprofile.models.Userprofile.user" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="userprofile.models.Userprofile.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#userprofile.models.Userprofile.user_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="userprofile-tests-module">
+<h2>userprofile.tests module<a class="headerlink" href="#userprofile-tests-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="userprofile-urls-module">
+<h2>userprofile.urls module<a class="headerlink" href="#userprofile-urls-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="userprofile-views-module">
+<h2>userprofile.views module<a class="headerlink" href="#userprofile-views-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-userprofile">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-userprofile" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manage.html" class="btn btn-neutral float-left" title="manage module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="userprofile.migrations.html" class="btn btn-neutral float-right" title="userprofile.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, M&#39;hena Ammour.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

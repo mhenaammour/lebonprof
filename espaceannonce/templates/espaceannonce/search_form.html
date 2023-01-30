@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{%block title%}Cherchez vos cours{% endblock  %}
+
+{% block content  %}
+<form method="get">
+    {{ form.as_p }}
+    <button class="py-3 px-5 bg-teal-400 text-white">Submit</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#id_wilaya').change(function () {
+            var wilaya_id = $(this).val();
+            $.ajax({
+                url: '/espaceannonce/get_communes/',
+                data: {
+                    'wilaya_id': wilaya_id
+                },
+                success: function (data) {
+                    $('#id_commune').html(data);
+                }
+            });
+        });
+    });
+</script>
+
+
+{% endblock  %}
