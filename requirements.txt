@@ -34,7 +34,7 @@ future==0.18.2
 geocoder==1.38.1
 google==3.0.0
 googlemaps==4.7.3
-h11==0.14.0
+h11==0.16.0
 html5lib==1.1
 idna==3.4
 imagesize==1.4.1
